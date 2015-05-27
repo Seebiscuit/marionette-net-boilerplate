@@ -29,6 +29,11 @@ require.config({
         }
 
 	},
+
+	packages: [
+        { name: 'when', location: '../node_modules/when', main: 'when' }
+	],
+
     waitSeconds: 60
 });
 
