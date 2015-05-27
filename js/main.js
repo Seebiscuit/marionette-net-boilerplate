@@ -1,38 +1,39 @@
 require.config({
-	paths: {
-		underscore: '../bower_components/underscore/underscore',
-		backbone: '../bower_components/backbone/backbone',
-		marionette: '../bower_components/backbone.marionette/lib/backbone.marionette',
-		jquery: '../bower_components/jquery/jquery',
-		localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
-		tpl: 'lib/tpl',
-        bootstrap: 'lib/bootstrap.min'
-	},
+    paths: {
+        underscore: '../bower_components/underscore/underscore',
+        backbone: '../bower_components/backbone/backbone',
+        marionette: '../bower_components/backbone.marionette/lib/backbone.marionette',
+        jquery: '../bower_components/jquery/jquery',
+        localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
+        tpl: 'lib/tpl',
+        bootstrap: 'lib/bootstrap.min',
+        hoard: 'lib/backbone.hoard/dist/backbone.hoard',
+    },
 
-	shim: {
-		underscore: {
-			exports: '_'
-		},
+    shim: {
+        underscore: {
+            exports: '_'
+        },
 
-		backbone: {
-			exports: 'Backbone',
-			deps: ['jquery', 'underscore']
-		},
+        backbone: {
+            exports: 'Backbone',
+            deps: ['jquery', 'underscore']
+        },
 
-		marionette: {
-			exports: 'Backbone.Marionette',
-			deps: ['backbone']
-		},
+        marionette: {
+            exports: 'Backbone.Marionette',
+            deps: ['backbone']
+        },
 
         bootstrap: {
             deps: ['jquery']
-        }
+        }   
 
-	},
+    },
 
-	packages: [
+    packages: [
         { name: 'when', location: '../node_modules/when', main: 'when' }
-	],
+    ],
 
     waitSeconds: 60
 });
@@ -43,11 +44,11 @@ require([
     'jquery',
 	'bootstrap'
 ], function (app, PagesModule) {
-	'use strict';
+    'use strict';
 
-    app.addInitializer(function() {
+    app.addInitializer(function () {
         PagesModule.start();
     });
 
-	app.start();
+    app.start();
 });
